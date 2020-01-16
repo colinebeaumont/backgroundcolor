@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+<link type="text/css" rel="stylesheet" href="exo1.css">
+    <title>Random Background</title>
+                <style>
+                #random-background {
+                    width: 100vw;
+                    height: 100vh;
+                    background: white;
+                    margin: 0px;
+                    transition: 1s;
+                }
+                </style>
+                  
+</head>
+
+<body id = "random-background">
+
+    <p id="lancer" style="text-align: center;"><input type="button" value="LANCER" onclick="changerColor()"></p>
+    <p id="arreter" style="text-align: center;"><input type="button" value="ARRÊTER" onclick="stop()"></p>
+<script>
+let interval;
+function changerColor(){
+            interval = setInterval(function changerfond(){
+                var x = Math.round( Math.random() * 255 );
+                var y = Math.round( Math.random() * 255 );
+                var z = Math.round( Math.random() * 255 );
+                var bg = "background:rgb("+x+", "+y+", "+z+");";
+                var element = document.getElementById("random-background");
+                element.style = bg;
+            }, 1000);
+    }
+function stop(){
+    clearInterval(interval);
+}
+</script>
+</body>
+
+</html>
